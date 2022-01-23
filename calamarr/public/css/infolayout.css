@@ -1,0 +1,142 @@
+
+:root {
+    --color-theme: #9e1b22;
+    --color-themeshadow: rgb(53, 5, 15);
+    --color-backgroundcontenedor: rgba(10, 9, 9, 0.863);
+    --color-textform: rgb(255, 255, 255);
+  }
+
+.filterblack{
+    float:left;
+    min-width: 100%;
+    min-height: 100%;
+    background-color: rgba(0, 0, 0, 0.61);
+    position: absolute;
+    background: radial-gradient(circle, rgba(2, 0, 36, 0.445) 0%, rgba(6, 36, 80, 0.486) 35%, rgb(0, 0, 0) 100%);
+
+}
+td{
+  color: var(--color-textform);
+}
+th{
+  color: var(--color-textform);
+}
+
+
+.contenedor{
+    
+    z-index: 1;
+    min-height: 100px;
+    min-width: 100px;
+
+    box-shadow: 8px 8px 1px var(--color-themeshadow);
+    /*margin-left: auto;
+    margin-right: auto;
+    margin-top: auto;*/
+    margin: auto;
+    border-radius: 15px;
+    background-color: var(--color-backgroundcontenedor);
+    /*top: 50%;
+    left: 50;
+    position: absolute;*/
+    /*padding: 10px;*/
+    box-sizing: border-box;
+    overflow: hidden;
+
+
+    animation-name: girar;
+  animation-duration: 1.5s;
+}
+@keyframes girar {
+    from {
+      
+      transform: scale(0);
+    }
+    to {
+      transform: scale(1);
+    }
+  }
+.contenedor form{
+    color: var(--color-textform);
+}
+.contenedor h3{  
+    color: var(--color-textform);
+    text-align:center;
+    padding: 10px;
+}
+.contenedor input:invalid {
+    border: 3px solid red;
+   /*box-shadow: 2px 2px 2px 2px red;*/
+  }
+
+  /* Estilo por defecto */
+  input:valid {
+    /*border: 1px solid green;*/
+  }
+.contenedorperfil{
+    display: flex;
+}
+.imgperfil {
+    margin-left: auto;
+    margin-right: auto;
+    width: 75px;
+    height: 75px;
+    border-radius: 50%;
+}
+.contenedor h1{
+    text-align:center;
+    background-color: var(--color-theme);
+    color: #ffffff;
+    padding: 10px;
+}
+.contenedor button{
+    width: 100%;
+}
+
+/*tabla max widht scroll*/
+.scrolltable{
+  /*display: inline;*/
+  overflow-y: scroll;
+  /*width: 100%;*/
+  /*display: flex;*/
+  max-height: 500px;
+}
+table{
+  font-size: 0.75em;
+}
+
+body{
+    position: relative;/*posicion para que el filtro aplique bien*/
+    display: flex;
+    min-height: 100vh;
+    background-color: rgb(170, 224, 213);
+    /*background-image: url("https://www.magazinespain.com/wp-content/uploads/2021/10/juego-del-calamar-6.jpg");*/
+    background-position: center; /* Center the image */
+    background-repeat: no-repeat;
+    background-size:cover;/*se escala automatico para que cubra todo sin deformarse*/
+    
+}
+
+
+/*scroll  style*/
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px grey; 
+  border-radius: 10px;
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: var(--color-themeshadow); 
+  border-radius: 10px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-theme); 
+}
