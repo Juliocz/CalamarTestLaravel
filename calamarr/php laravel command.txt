@@ -1,0 +1,167 @@
+LARAVEL
+
+//MIGRAR BASE DE DATOS
+//para crear tablas de los modelos
+php artisan migrate
+//borra todos los datos de las tablas pero las crea de nuevo
+php artisan migrate:refresh
+
+
+
+
+https://styde.net/que-es-composer-y-como-usarlo/
+
+
+crear projecto laravel con composer
+
+composer create-project laravel/laravel ProjectName 
+
+para correr projecto
+
+php artisan serve
+
+sudo php artisan serve --port=8000
+
+//para crear tablas de los modelos
+php artisan migrate
+//borra todos los datos de las tablas pero las crea de nuevo
+php artisan migrate:refresh
+
+//para crear un controlador invocable con controller::class
+
+php artisan make:controller Datos/DJugadorController --invokable
+
+//sino nose podra invocar , solo se podra invocar por el path del archivo
+
+PAra poder usar laravel es necesario tener instalado php y composer
+
+
+//Con esto creo un modelo para poder usarlo en bd mysql
+//esto extiende de otra clase facilitando metodos para usar en mysql con laravel php
+php artisan make:model clientes
+//con archivo migracion
+php artisan make:model jugadores -m 
+
+///Creo controlador
+php artisan make:controller clientes
+
+Copy & Paste del excelente "Code Bright en Español". No me cansare de recomendar este libro
+
+1 <?php
+2
+3 // app/routes.php
+4
+5 Route::group(array('domain' => 'miaplicacion.dev'), function()
+6 {
+7 Route::get('mi/ruta', function() {
+8 return 'Hola desde myapp.dev!';
+9 });
+10 });
+11
+12 Route::group(array('domain' => 'otra.miaplicacion.dev'), function()
+13 {
+14 Route::get('mi/ruta', function() {
+15 return 'Hola desde otra.miaplicacion.dev!';
+16 });
+17 });
+18
+19 Route::group(array('domain' => 'tercera.miaplicacion.dev'), function()
+20 {
+21 Route::get('mi/ruta', function() {
+22 return 'Hola desde tercera.miaplicacion.dev!';
+23 });
+24 });
+
+
+instalar boostrap en php laravel 
+Etapes :
+- Composer require laravel/ui
+- php artisan ui bootstrap
+Bootstrap scaffolding installed successfully.
+Please run "npm install && npm run dev" to compile your fresh scaffolding.
+- npm install
+- npm run dev
+- link le fichier app.css et app.js du dossier Public dans votre bladeu, linkear appss y js
+"{{asset('css/app.css')}}" en el html
+
+"{{asset('js/app.js')}}" en el html script al final
+
+
+//modal es la ventana emergente, hay modals faciles en boostrap
+
+
+//----instalar tailwind en laravel 8
+
+npm install //instala dependecias node
+npm install tailwindcss// instala tailwind libs
+
+Agregar Tailwindcss to your resources/css/app.css
+
+@import "tailwindcss/base";
+
+@import "tailwindcss/components";
+
+@import "tailwindcss/utilities";
+
+//Create your Tailwind config file
+
+npx tailwindcss init
+
+//actualizar archivo a webpack.mix.js file
+
+mix.js('resources/js/app.js', 'public/js')
+    .postCss('resources/css/app.css', 'public/css', [
+        require('tailwindcss'),
+    ]);
+
+//Compile your assets, compilar todos los recursos y listo
+
+npm run dev
+
+npm run watch
+
+asset o mix funciona para llamar a la lib css
+//fin
+
+
+//boostrap install
+Etapes :
+- Composer require laravel/ui
+- php artisan ui bootstrap
+- npm install
+- npm run dev
+- link le fichier app.css et app.js du dossier Public dans votre blade
+
+
+//ejemplo
+<!DOCTYPE html>
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <title>Laravel</title>
+
+        <!-- Fonts -->
+        <link href="{{asset('css/app.css')}}" rel="stylesheet">
+    </head>
+    <body >
+    <button type="button" class="btn btn-primary">Primary</button>
+<button type="button" class="btn btn-secondary">Secondary</button>
+<button type="button" class="btn btn-success">Success</button>
+<button type="button" class="btn btn-danger">Danger</button>
+<button type="button" class="btn btn-warning">Warning</button>
+<button type="button" class="btn btn-info">Info</button>
+<button type="button" class="btn btn-light">Light</button>
+<button type="button" class="btn btn-dark">Dark</button>
+
+<button type="button" class="btn btn-link">Link</button>
+       <script src="{{asset('js/app.js')}}"></script>
+    </body>
+</html>
+
+
+//para arreglar envio de formularios en post
+@csrf al inicio de formulario
+y luego 
+php artisan view:clear
